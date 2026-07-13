@@ -1,0 +1,8 @@
+# SlideMaker Public: Supabase local/CLI config
+#
+# セルフホストする第三者は `supabase init` / `supabase link` で
+# 自分のプロジェクト固有の project_id 等を追記すること。
+# 運営固有の値はこのリポジトリにはコミットしない。
+
+[functions.gpt-image-proxy]
+verify_jwt = true

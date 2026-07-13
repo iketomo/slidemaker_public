@@ -1,0 +1,430 @@
+/* SlideMaker Public: 最小限の素の CSS
+   本格デザインは Claude Design 出力に差し替え予定。ここではレイアウトが崩れず
+   全機能を確認できる程度の最小スタイルのみを定義する。 */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  color: #1a1a1a;
+  background: #f7f7f8;
+  line-height: 1.6;
+}
+
+a {
+  color: #2563eb;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+/* ===== レイアウト / ヘッダー ===== */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e2e5;
+  flex-wrap: wrap;
+}
+
+.app-header__brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.app-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.app-nav a {
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.app-nav a.active,
+.app-nav a:hover {
+  background: #eef2ff;
+  color: #2563eb;
+}
+
+.app-header__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.landing-hero {
+  text-align: center;
+  padding: 80px 16px;
+}
+
+.landing-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.landing-hero p {
+  color: #555;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+
+/* ===== 汎用フォーム ===== */
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.field-hint {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'],
+input[type='url'],
+input[type='file'],
+textarea,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d0d0d5;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  color: #1a1a1a;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.field-row > .field {
+  flex: 1;
+  min-width: 180px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+fieldset {
+  border: 1px solid #d0d0d5;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 0 0 16px;
+}
+
+legend {
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+/* ===== ボタン ===== */
+
+button,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #d0d0d5;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #f2f2f4;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.btn-danger {
+  background: #fff;
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #fef2f2;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* ===== カード / セクション ===== */
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e2e5;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.card h3 {
+  font-size: 1rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin: 0 0 4px;
+}
+
+.section-desc {
+  color: #666;
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+}
+
+/* ===== 通知 ===== */
+
+.notice {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.notice-error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.notice-info {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.notice-success {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+/* ===== ページ編集リスト（F1） ===== */
+
+.page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.page-card {
+  border: 1px solid #e2e2e5;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.page-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.page-card__number {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.page-image-preview {
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid #e2e2e5;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+/* ===== 画像グリッド（F2 / 履歴） ===== */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.image-card {
+  border: 1px solid #e2e2e5;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 8px;
+  background: #f2f2f4;
+}
+
+.thumb-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+
+.thumb-picker__item {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f2f2f4;
+}
+
+.thumb-picker__item.selected {
+  border-color: #2563eb;
+}
+
+.thumb-picker__item img {
+  width: 100%;
+  height: 72px;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-picker__label {
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  text-align: center;
+  color: #555;
+}
+
+/* ===== 履歴 ===== */
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #e2e2e5;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.history-row.active {
+  border-color: #2563eb;
+  background: #eef2ff;
+}
+
+.history-row__meta {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.mask-value {
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.history-detail {
+  margin-top: 24px;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: #777;
+}
+
+.empty-state {
+  padding: 24px;
+  text-align: center;
+  color: #888;
+  border: 1px dashed #d0d0d5;
+  border-radius: 8px;
+}

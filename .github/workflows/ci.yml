@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Gitleaks scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Assert no API keys leaked into build output
+        run: |
+          set -e
+          if grep -aoE 'AIza[0-9A-Za-z_-]{35}|sk-[A-Za-z0-9_-]{20,}' dist/assets/*.js; then
+            echo "::error::Potential API key found in dist/assets/*.js"
+            exit 1
+          fi
+          echo "No API key patterns found in build output."

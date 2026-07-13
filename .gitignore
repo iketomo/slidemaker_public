@@ -1,0 +1,41 @@
+# dependencies
+node_modules
+
+# build output
+dist
+dist-ssr
+
+# env
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# supabase local
+supabase/.branches
+supabase/.temp
+
+# editor / os
+.DS_Store
+.idea
+*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+*.tsbuildinfo
+
+# internal working docs (not for public repo)
+/docs/REQUIREMENTS.md
+/docs/DECISIONS.md
+/PROGRESS.md
+/KNOWLEDGE.md
+/CLAUDE.md
+
+# tsc build artifacts (composite project)
+vite.config.js
+vite.config.d.ts
