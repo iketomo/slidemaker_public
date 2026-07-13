@@ -2,13 +2,11 @@
 
 ## Supported versions
 
-SlideMaker Public doesn't currently maintain versioned releases — `main` is the supported branch. If you're running a self-hosted instance, pull the latest `main` to pick up security fixes.
+SlideMaker Public doesn't currently maintain versioned releases — `master` is the supported branch. If you're running a self-hosted instance, pull the latest `master` to pick up security fixes.
 
 ## Reporting a vulnerability
 
-<!-- TODO(maintainer): replace with a real inbox before this repo goes public, and update the address below in both places. -->
-
-Please report suspected vulnerabilities privately to **security@example.com** rather than opening a public issue. If your GitHub repository has [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability) enabled, that's the preferred channel — it keeps the report and any discussion out of the public issue tracker until a fix is ready.
+Please report suspected vulnerabilities privately to **tomohiro.ikeda@gmail.com** rather than opening a public issue. If your GitHub repository has [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability) enabled, that's the preferred channel — it keeps the report and any discussion out of the public issue tracker until a fix is ready.
 
 When reporting, please include:
 
